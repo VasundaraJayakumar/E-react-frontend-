@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import annyang from 'annyang';
 import axios from 'axios';
 import "../styles/screens/VoiceRecoginition.css";
+
  
 function VoiceRecognition() {
   const [transcript, setTranscript] = useState('Start speaking...');
   const [recordImage, setRecordImage] = useState({});
+  
   const speak = (sentence) => {
   const text_speak = new SpeechSynthesisUtterance(sentence);
   text_speak.rate = 1;
@@ -109,6 +111,7 @@ function VoiceRecognition() {
     setupAnnyang();
  
   }, []);
+
  
   const openFile = (url) => {
    axios
@@ -162,6 +165,7 @@ function VoiceRecognition() {
           />
         )}
       </div>
+    
  
     </>
   );
